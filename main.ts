@@ -8,7 +8,7 @@ const img = await resize(Deno.readFileSync("./deno.png"), {
 
 serve(
   (_req: Request) =>
-    new Response(img, {
+    new Response(img.buffer, {
       status: 200,
       headers: {
         "content-type": "image/png",
